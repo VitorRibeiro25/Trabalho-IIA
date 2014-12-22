@@ -9,8 +9,9 @@ using namespace std;
 // 3. metodo hibrido que segundo o que aqui diz serve para combinar as abordagens anteriores
 
 
-// trepa colinas, algoritmo: algoritmo.cpp
 // isto ainda está uma confusao, mas o algoritmo do trepa colinas é mais ou menos isto
+// isto foi retirado da aula em que fizemos experiencia com o trepa colinas
+
 
 
 void main(){
