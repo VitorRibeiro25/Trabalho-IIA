@@ -40,7 +40,7 @@ int trepa_colinas(int sol[], int *mat, int vert, int num_iter)
 {
     int *nova_sol, custo, custo_viz, i;
     
-	nova_sol = malloc(sizeof(int)*vert);
+	nova_sol = (int)malloc(sizeof(int)*vert);
     if(nova_sol == NULL)
     {
         printf("Erro na alocacao de memoria");
