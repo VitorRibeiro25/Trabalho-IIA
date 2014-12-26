@@ -1,5 +1,4 @@
 
-
 //basicamente este trabalho temos de criar 3 funçoes 
 // 1. uma para o algoritmo de pesquisa local, neste caso eu sugeria em escolhermos o trepa-colinas
 // 2. algoritmo evolutivo, isto ainda nao sei o que é
@@ -8,8 +7,6 @@
 
 // isto ainda está uma confusao, mas o algoritmo do trepa colinas é mais ou menos isto
 // isto foi retirado da aula em que fizemos experiencia com o trepa colinas
-
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +20,7 @@ int main(int argc, char *argv[])
 {
     char nome_fich[100];
     int *grafo, *sol, *best;
-    int vert, num_iter, i, k, runs, custo, best_custo;
+    int vert, num_iter, k, runs, custo, best_custo;
 	float mbf = 0.0;
         
 	if(argc == 3)
@@ -51,8 +48,8 @@ int main(int argc, char *argv[])
     // Preenche matriz de adjacencias 
     grafo = init_dados(nome_fich, &vert, &num_iter);
   	
-	sol = (int*)malloc(sizeof(int)*vert);
-	best = (int*)malloc(sizeof(int)*vert);
+	sol = new int[vert];
+	best = new int[vert];
 	
 	if(sol == NULL || best == NULL)
 	{
