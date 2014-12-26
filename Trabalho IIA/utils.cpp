@@ -27,7 +27,7 @@ int* init_dados(char *nome, int *n, int *iter)
 	fscanf(f, " %d", n);
 	
 	// Alocacao dinamica da matriz
-	p = (int)malloc(sizeof(int)*(*n)*(*n));
+	p = (int*)malloc(sizeof(int)*(*n)*(*n));
 	if(!p)
 	{
 	    printf("Erro na alocacao de memoria\n");

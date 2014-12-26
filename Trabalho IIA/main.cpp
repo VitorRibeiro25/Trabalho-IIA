@@ -51,8 +51,8 @@ int main(int argc, char *argv[])
     // Preenche matriz de adjacencias 
     grafo = init_dados(nome_fich, &vert, &num_iter);
   	
-	sol = (int)malloc(sizeof(int)*vert);
-	best = (int)malloc(sizeof(int)*vert);
+	sol = (int*)malloc(sizeof(int)*vert);
+	best = (int*)malloc(sizeof(int)*vert);
 	
 	if(sol == NULL || best == NULL)
 	{
