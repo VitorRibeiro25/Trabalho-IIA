@@ -1,5 +1,5 @@
 
-int* init_dados(char *nome, int *n, int *iter);
+int** init_dados(char *nome, int *n, int *iter);
 
 void gera_sol_inicial(int *sol, int v);
 

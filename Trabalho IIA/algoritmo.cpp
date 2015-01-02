@@ -36,7 +36,7 @@ void gera_vizinho(int a[], int b[], int n)
 // Parametros: solucao, matriz de adjacencias, numero de vertices e numero de iteracoes
 // Devolve o custo da melhor solucao encontrada
 
-int trepa_colinas(int sol[], int *mat, int vert, int num_iter)
+int trepa_colinas(int sol[], int **mat, int vert, int num_iter)
 {
     int *nova_sol, custo, custo_viz, i;
     

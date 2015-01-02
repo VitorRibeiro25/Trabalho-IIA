@@ -10,16 +10,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string>
+#include <iostream>
+#include <fstream>
 #include "algoritmo.h"
 #include "utils.h"
 
 #define DEFAULT_RUNS 10
 
+using namespace std;
+
 int main(int argc, char *argv[])
 {
     char nome_fich[100];
-    int *grafo, *sol, *best;
+    int **grafo, *sol, *best;
     int vert, num_iter, k, runs, custo, best_custo;
 	float mbf = 0.0;
         
@@ -57,7 +61,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	
-	for(k=0; k<runs; k++)
+	for(k=0; k < runs; k++)
 	{
 		// Gerar solucao inicial
 		gera_sol_inicial(sol, vert);

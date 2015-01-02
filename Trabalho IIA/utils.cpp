@@ -1,45 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 #include "utils.h"
 
+using namespace std;
 
 // Leitura do ficheiro de input
 // Recebe: nome do ficheiro, numero de vertices (ptr), numero de iteracoes (ptr)
 // Devolve a matriz de adjacencias
-int* init_dados(char *nome, int *n, int *iter)
+int** init_dados(char *nome, int *n, int *iter)
 {
 	FILE *f;
-	int *p, *q;
+	int **p, **q;
 	int i, j;
+	string fn(nome), temp;
 
-	f=fopen(nome, "r");
-	if(!f)
-	{
-		printf("Erro no acesso ao ficheiro dos dados\n");
-		exit(1);
+	ifstream myfile;
+	myfile.open(fn);
+
+	if(myfile.is_open()){
+		getline(myfile, temp);
+		*iter = stoi(temp, nullptr, 10);
+		getline(myfile, temp);
+		*n = stoi(temp, nullptr, 10);
 	}
-	
-	// Numero de iteracoes
-	fscanf(f, " %d", iter);
-	
-	// Numero de vertices
-	fscanf(f, " %d", n);
 	
 	// Alocacao dinamica da matriz
-	p = (int*)malloc(sizeof(int)*(*n)*(*n));
-	if(!p)
-	{
-	    printf("Erro na alocacao de memoria\n");
-	    exit(1);
-	}
+	p = new int* [(*n)];
+	for(int l; l <= (*n); l++)
+		p[l] = new int [(*n)];
+
 	q=p;
 	
 	// Preenchimento da matriz
 	for(i=0; i<*n; i++)
-	 for(j=0; j<*n; j++)
-	   fscanf(f, " %d", q++);
-	fclose(f);
+	 for(j=0; j<*n; j++){
+	   getline(myfile, temp);
+	   q[i][j] = stoi(temp, nullptr, 10);
+	 }
+
+	myfile.close();
 	
 	return p;
 }
