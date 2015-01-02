@@ -58,7 +58,7 @@ int trepa_colinas(int sol[], int *mat, int vert, int num_iter)
 		// Avalia vizinho
 		custo_viz = calcula_fit(nova_sol, mat, vert);
         
-		// Aceita vizinho se o custo diminuir (problema de minimizacao)
+		// Aceita vizinho se o custo diminuir (problema de minimizacao) -> isto esta a corresponder com o nosso, tambem é de minimizacao
         if(custo_viz < custo)
         {
 			substitui(sol, nova_sol, vert);
