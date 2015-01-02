@@ -13,7 +13,6 @@ using namespace std;
 // Devolve a matriz de adjacencias
 int** init_dados(char *nome, int *n, int *iter)
 {
-	FILE *f;
 	int **p, **q;
 	int i, j;
 	string fn(nome), temp;
@@ -30,7 +29,7 @@ int** init_dados(char *nome, int *n, int *iter)
 	
 	// Alocacao dinamica da matriz
 	p = new int* [(*n)];
-	for(int l; l <= (*n); l++)
+	for(int l=0; l <= (*n); l++)
 		p[l] = new int [(*n)];
 
 	q=p;
