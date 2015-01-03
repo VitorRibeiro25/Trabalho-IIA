@@ -27,7 +27,7 @@
     <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Trabalho-de-POO\Trabalho de POO\Consola.cpp">
+    <ClCompile Include="Consola.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Trabalho-de-POO\Trabalho de POO\Consola.h">
+    <ClInclude Include="Consola.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

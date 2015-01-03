@@ -77,15 +77,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Trabalho-de-POO\Trabalho de POO\Consola.cpp" />
     <ClCompile Include="algoritmo.cpp" />
+    <ClCompile Include="Consola.cpp" />
     <ClCompile Include="funcao.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Trabalho-de-POO\Trabalho de POO\Consola.h" />
     <ClInclude Include="algoritmo.h" />
+    <ClInclude Include="Consola.h" />
     <ClInclude Include="funcao.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
