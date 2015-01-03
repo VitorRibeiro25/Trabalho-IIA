@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include "utils.h"
 
 using namespace std;
@@ -13,8 +14,9 @@ using namespace std;
 // Devolve a matriz de adjacencias
 int** init_dados(char *nome, int *n, int *iter)
 {
-	int **p, **q;
+	int **p;
 	int i, j;
+	int dim_x, dim_y;
 	string fn(nome), temp;
 
 	ifstream myfile;
@@ -22,25 +24,33 @@ int** init_dados(char *nome, int *n, int *iter)
 
 	if(myfile.is_open()){
 		getline(myfile, temp);
-		*iter = stoi(temp, nullptr, 10);
-		getline(myfile, temp);
-		*n = stoi(temp, nullptr, 10);
+		istringstream string_a_separar(temp);
+		string_a_separar >> temp;
+		dim_x = stoi(temp, nullptr);
+		string_a_separar >> temp;
+		dim_y = stoi(temp, nullptr);
+		cout << "Dimensoes da matriz " << dim_x << " " << dim_y << endl;
+
+		for (int a = 0; a < 3; a++){
+			getline(myfile, temp);
+		}
+
+		p = new int*[dim_y];
+		for (int l = 0; l < dim_y; l++)
+			p[l] = new int[dim_x];
+
+		for (i = 0; i < dim_y; i++){
+			for (j = 0; j < dim_x; j++){
+				p[i][j] = 0;
+			}
+		}
 	}
-	
-	// Alocacao dinamica da matriz
-	p = new int* [(*n)];
-	for(int l=0; l <= (*n); l++)
-		p[l] = new int [(*n)];
 
-	q=p;
-	
 	// Preenchimento da matriz
-	for(i=0; i<*n; i++)
-	 for(j=0; j<*n; j++){
-	   getline(myfile, temp);
-	   q[i][j] = stoi(temp, nullptr, 10);
-	 }
-
+	do{
+		cout << "Yo";
+	} while (getline(myfile, temp));
+	
 	myfile.close();
 	
 	return p;
