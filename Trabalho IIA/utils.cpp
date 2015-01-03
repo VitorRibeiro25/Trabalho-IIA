@@ -15,7 +15,7 @@ using namespace std;
 int** init_dados(char *nome, int *n, int *iter)
 {
 	int **p;
-	int i, j;
+	int i, j, l;
 	int dim_x, dim_y;
 	string fn(nome), temp;
 
@@ -36,19 +36,23 @@ int** init_dados(char *nome, int *n, int *iter)
 		}
 
 		p = new int*[dim_y];
-		for (int l = 0; l < dim_y; l++)
+		for (l = 0; l < dim_y; l++)
 			p[l] = new int[dim_x];
 
-		for (i = 0; i < dim_y; i++){
-			for (j = 0; j < dim_x; j++){
+		for (i = 0; i < dim_x; i++){
+			for (j = 0; j < dim_y; j++){
 				p[i][j] = 0;
+				cout << p[i][j];
 			}
+			cout << endl;
 		}
 	}
 
+	cout << "yo";
+
 	// Preenchimento da matriz
 	do{
-		cout << "Yo";
+		
 	} while (getline(myfile, temp));
 	
 	myfile.close();
