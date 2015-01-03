@@ -48,8 +48,6 @@ int** init_dados(char *nome, int *n, int *iter)
 		}
 	}
 
-	cout << "yo";
-
 	// Preenchimento da matriz
 	do{
 		
