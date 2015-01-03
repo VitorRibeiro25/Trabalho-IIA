@@ -42,9 +42,7 @@ int** init_dados(char *nome, int *n, int *iter)
 		for (i = 0; i < dim_x; i++){
 			for (j = 0; j < dim_y; j++){
 				p[i][j] = 0;
-				cout << p[i][j];
 			}
-			cout << endl;
 		}
 	}
 
@@ -54,11 +52,11 @@ int** init_dados(char *nome, int *n, int *iter)
 		contador++;
 
 		getline(myfile, temp);
-		int_temp = stoi(temp, nullptr);
-		cout << "Linha " << contador << " com " << int_temp << " elementos" << endl;
-		for (int x = 0; x < 3; x++){
-
+		if (contador % 2 != 0){
+			int_temp = stoi(temp, nullptr);
+			cout << "Linha " << contador << " com " << int_temp << " elementos" << endl;
 		}
+
 
 	} while (getline(myfile, temp));
 	
