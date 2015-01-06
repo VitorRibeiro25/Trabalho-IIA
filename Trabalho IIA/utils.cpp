@@ -46,6 +46,8 @@ int** init_dados(char *nome, int *n, int *iter)
 		}
 	}
 
+	
+
 	// Preenchimento da matriz
 	do{
 		int int_temp;
@@ -60,8 +62,8 @@ int** init_dados(char *nome, int *n, int *iter)
 
 	} while (getline(myfile, temp));
 	
+
 	myfile.close();
-	
 	return p;
 }
 
