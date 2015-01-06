@@ -15,7 +15,7 @@ using namespace std;
 int** init_dados(char *nome, int *n, int *iter)
 {
 	int **p;
-	int i, j, l, linha_actual, contador = 0;
+	int i, j, l, contador = 0;
 	int dim_x, dim_y;
 	string fn(nome), temp;
 
@@ -44,6 +44,7 @@ int** init_dados(char *nome, int *n, int *iter)
 				p[i][j] = 0;
 			}
 		}
+		myfile.close();
 	}
 
 	
@@ -51,14 +52,28 @@ int** init_dados(char *nome, int *n, int *iter)
 	// Preenchimento da matriz
 	do{
 		int int_temp;
+		string temp2;
+		streamoff linha_actual;
 		contador++;
 
+		myfile.open(fn);
 		getline(myfile, temp);
+		myfile.clear();
+		linha_actual = myfile.tellg();
+
 		if (contador % 2 != 0){
 			int_temp = stoi(temp, nullptr);
 			cout << "Linha " << contador << " com " << int_temp << " elementos" << endl;
-		}
+			
+			//getline(myfile, temp2);
+			istringstream sstream(temp2);
 
+			do
+			{
+				string sub;
+				sstream >> sub;
+			} while (sstream);
+		}
 
 	} while (getline(myfile, temp));
 	
